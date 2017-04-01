@@ -1,0 +1,21 @@
+[package]
+authors = ["Chris Woodall <chris.j.woodall@gmail.com>"]
+name = "rust-button-interrupt"
+version = "0.1.0"
+
+[dependencies]
+stm32f303x-memory-map = "0.1.1"
+cortex-m = "0.2.1"
+volatile-register = "0.2.0"
+
+[dependencies.f3]
+default-features = false
+features = [
+  "default-exception-handler",
+  "default-panic-fmt",
+  "interrupts"
+]
+version = "0.3.0"
+
+[profile.release]
+lto = true
